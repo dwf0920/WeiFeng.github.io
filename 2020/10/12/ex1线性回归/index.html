@@ -20,30 +20,37 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="心怀浪漫宇宙，也珍惜人间日常">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WillFeng&#39;s Blog">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="题目描述​       我们将使用一个变量实现线性回归，根据城市人口数量，预测开小吃店的利润，数据在ex1data.txt里，第一列是城市人口数量，第二列是该城市小吃店利润。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ex1单变量线性回归">
+<meta property="og:url" content="http://example.com/2020/10/12/ex1%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/index.html">
 <meta property="og:site_name" content="WillFeng&#39;s Blog">
-<meta property="og:description" content="心怀浪漫宇宙，也珍惜人间日常">
+<meta property="og:description" content="题目描述​       我们将使用一个变量实现线性回归，根据城市人口数量，预测开小吃店的利润，数据在ex1data.txt里，第一列是城市人口数量，第二列是该城市小吃店利润。">
 <meta property="og:locale">
+<meta property="og:image" content="http://example.com/2020/10/12/ex1%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/Figure_1.png">
+<meta property="og:image" content="http://example.com/2020/10/12/ex1%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/Figure_2.png">
+<meta property="article:published_time" content="2020-10-12T12:57:02.000Z">
+<meta property="article:modified_time" content="2020-10-12T14:03:48.874Z">
 <meta property="article:author" content="WillFeng">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="线性回归">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/10/12/ex1%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/Figure_1.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2020/10/12/ex1%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>WillFeng's Blog</title>
+  <title>ex1单变量线性回归 | WillFeng's Blog</title>
   
 
 
@@ -163,9 +170,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -181,10 +189,9 @@
       <meta itemprop="name" content="WillFeng's Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/12/ex1%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" class="post-title-link" itemprop="url">ex1单变量线性回归</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          ex1单变量线性回归
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -207,6 +214,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -217,163 +231,100 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>​       我们将使用一个变量实现线性回归，根据城市人口数量，预测开小吃店的利润，数据在ex1data.txt里，第一列是城市人口数量，第二列是该城市小吃店利润。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/12/ex1%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>​       我们将使用一个变量实现线性回归，根据城市人口数量，预测开小吃店的利润，数据在ex1data.txt里，第一列是城市人口数量，第二列是该城市小吃店利润。</p>
+<a id="more"></a>
+<h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><p>利用pandas读取数据，并显示前5行数据检查是否读取成功。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">data = pd.read_csv(<span class="string">&#x27;ex1data.txt&#x27;</span>, header=<span class="literal">None</span>, names=[<span class="string">&#x27;Population&#x27;</span>, <span class="string">&#x27;Profit&#x27;</span>])</span><br><span class="line">print(data.head())</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Population</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td style="text-align:center">6.1101</td>
+<td>17.5920</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">5.5277</td>
+<td>9.1302</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:center">8.5186</td>
+<td>13.6620</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:center">7.0032</td>
+<td>11.8540</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:center">5.8598</td>
+<td>6.8233</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><p>第一步我们需要对数据进行可视化，初步判断数据之间是否存在线性关系，这对后面的分析十分重要。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.scatter(x=data[<span class="string">&#x27;Population&#x27;</span>], y=data[<span class="string">&#x27;Profit&#x27;</span>], label=<span class="string">&#x27;data&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, color=<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/10/12/ex1%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/Figure_1.png" alt></p>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>根据吴恩达课程所讲，我们需要在x的第一列加上一列x_0=1,初始化初值为0的theta。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">data.insert(<span class="number">0</span>, <span class="string">&#x27;ones&#x27;</span>, <span class="number">1</span>)  <span class="comment"># 在第0列插入1，表头为ones (正规方程)</span></span><br><span class="line">x = data.iloc[:, <span class="number">0</span>:<span class="number">-1</span>]  <span class="comment"># 切片工具[几行到几行, 几列到几列]</span></span><br><span class="line">y = data.iloc[:, <span class="number">-1</span>:]</span><br><span class="line">x, y = np.matrix(x.values), np.matrix(y.values)</span><br><span class="line">theta = np.matrix(np.zeros(x.shape[<span class="number">1</span>]))  <span class="comment"># 初始化theta</span></span><br></pre></td></tr></table></figure>
+<h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p>采用回归问题中常用的平方误差代价函数。</p>
+<script type="math/tex; mode=display">
+J（\Theta）= \frac{1}{2m}\times\sum_{i=1}^m(h_\Theta(x^i)-y^i)^2</script><p>其中</p>
+<script type="math/tex; mode=display">
+h_\Theta(x)=\Theta_0+\Theta_1\times x_1</script><p>注意在前面初始化的时候添加了一列x_0,故</p>
+<script type="math/tex; mode=display">
+h_\Theta(x)=x\cdot\Theta^T</script><p>我们的目标是求出能够最小化J(θ)的θ，这样预测值才能更加接近y，即:</p>
+<script type="math/tex; mode=display">
+argmin_\Theta=J(\Theta)</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment"># 计算代价函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cost_function</span>(<span class="params">x_, y_, theta_</span>):</span></span><br><span class="line">    ans = np.power(x_.dot(theta_.T)-y_, <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> np.sum(ans)/(<span class="number">2</span>*x_.shape[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">print(cost_function(x, y, theta))</span><br></pre></td></tr></table></figure>
+<p>得出的结果应为theta=32.072733877455676。</p>
+<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><script type="math/tex; mode=display">
+\Theta_j:=\Theta_j-\alpha\times\frac{\partial J(\Theta)}{\partial \Theta_j}
+        :=\Theta_j-\frac{1}{m}\times \sum_{i=1}^m(h_\Theta(x^i)-y^i)x^i</script><p>其中α为learning rate,用来控制梯度下降的幅度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradient_descent</span>(<span class="params">x_, y_, theta_, alpha_, inters_</span>):</span></span><br><span class="line">    temp = np.matrix(np.zeros(theta.shape))</span><br><span class="line">    nums = int(theta.shape[<span class="number">1</span>])</span><br><span class="line">    cost = np.zeros(inters_)</span><br><span class="line">    <span class="keyword">for</span> inter <span class="keyword">in</span> range(inters_):</span><br><span class="line">        ans = x_.dot(theta_.T)-y_</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(nums):</span><br><span class="line">            temp[<span class="number">0</span>, i] = theta_[<span class="number">0</span>, i] - alpha_*np.sum(np.multiply(ans, x_[:, i]))/len(x_)</span><br><span class="line">        theta_ = temp</span><br><span class="line">        cost[inter] = cost_function(x_, y_, theta_)</span><br><span class="line">    <span class="keyword">return</span> theta_, cost</span><br></pre></td></tr></table></figure>
+<h2 id="预测函数"><a href="#预测函数" class="headerlink" title="预测函数"></a>预测函数</h2><p>设置α以及梯度下降的迭代次数，对θ进行求解。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置参数</span></span><br><span class="line">alpha = <span class="number">0.01</span></span><br><span class="line">inters = <span class="number">1500</span></span><br><span class="line">g, cost = gradient_descent(x, y, theta, alpha, inters)</span><br><span class="line"><span class="comment"># 画出预测函数</span></span><br><span class="line">x_test = np.linspace(data[<span class="string">&#x27;Population&#x27;</span>].min(), data[<span class="string">&#x27;Population&#x27;</span>].max(), data.shape[<span class="number">0</span>])</span><br><span class="line"><span class="comment"># linspace(start,end,num=50)从间隔取出50个数</span></span><br><span class="line">predict = g[<span class="number">0</span>, <span class="number">0</span>]+g[<span class="number">0</span>, <span class="number">1</span>]*x_test</span><br><span class="line">plt.scatter(x=data[<span class="string">&#x27;Population&#x27;</span>], y=data[<span class="string">&#x27;Profit&#x27;</span>], label=<span class="string">&#x27;data&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, color=<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">plt.plot(x_test, predict, c=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;predict&#x27;</span>)</span><br><span class="line">plt.xlabel = <span class="string">&#x27;Population&#x27;</span></span><br><span class="line">plt.ylabel = <span class="string">&#x27;Profit&#x27;</span></span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>得出最后的预测函数如下图所示。</p>
+<p><img src="/2020/10/12/ex1%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/Figure_2.png" alt></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag"># 机器学习</a>
+              <a href="/tags/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/" rel="tag"># 线性回归</a>
+          </div>
+
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/28/regression/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photo.jpg">
-      <meta itemprop="name" content="WillFeng">
-      <meta itemprop="description" content="心怀浪漫宇宙，也珍惜人间日常">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WillFeng's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/28/regression/" class="post-title-link" itemprop="url">regression</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-09-28 19:10:13 / 修改时间：22:09:19" itemprop="dateCreated datePublished" datetime="2020-09-28T19:10:13+08:00">2020-09-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/27/GaussianRegression/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/photo.jpg">
-      <meta itemprop="name" content="WillFeng">
-      <meta itemprop="description" content="心怀浪漫宇宙，也珍惜人间日常">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WillFeng's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/27/GaussianRegression/" class="post-title-link" itemprop="url">（转载）简单线性回归-基于高斯核函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-09-27 21:14:58 / 修改时间：22:55:30" itemprop="dateCreated datePublished" datetime="2020-09-27T21:14:58+08:00">2020-09-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="高斯过程"><a href="#高斯过程" class="headerlink" title="高斯过程"></a>高斯过程</h2><p>高斯过程 Gaussian Processes 是概率论和数理统计中随机过程的一种，是多元高斯分布的扩展，被应用于机器学习、信号处理等领域。本文对高斯过程进行公式推导、原理阐述、可视化以及代码实现，介绍了以高斯过程为基础的高斯过程回归 Gaussian Process Regression 基本原理、超参优化、高维输入等问题。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/27/GaussianRegression/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/28/regression/" rel="prev" title="regression">
+      <i class="fa fa-chevron-left"></i> regression
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -426,6 +377,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">读取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">数据可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="nav-number">5.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="nav-number">6.</span> <span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E6%B5%8B%E5%87%BD%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">预测函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
